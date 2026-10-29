@@ -1,0 +1,14 @@
+{
+  "name": "prestij-magaza",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prestij Servis Ekipmanları e-ticaret sitesi (bağımlılıksız Node.js)",
+  "main": "server.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "test": "node --no-warnings scripts/selftest.js",
+    "loadtest": "node --no-warnings scripts/loadtest.js 2000",
+    "backup": "node --no-warnings scripts/backup.js"
+  }
+}
