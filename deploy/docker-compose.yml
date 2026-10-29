@@ -1,0 +1,19 @@
+# docker compose -f deploy/docker-compose.yml up -d --build   (proje klasöründen)
+services:
+  magaza:
+    build: { context: .., dockerfile: deploy/Dockerfile }
+    restart: always
+    ports: ["3000:3000"]
+    volumes: ["./veri:/data"]          # veritabanı, fotoğraflar, yedekler ve günlükler burada kalır
+    environment:
+      BASE_URL: "https://www.ornek-alan-adi.com"
+      PAYMENT_PROVIDER: "demo"         # canlıda: paytr
+      # PAYTR_MERCHANT_ID: ""
+      # PAYTR_KEY: ""
+      # PAYTR_SALT: ""
+      # PAYTR_TEST: "0"
+      # SMTP_HOST: "smtp.ornek.com"
+      # SMTP_PORT: "465"
+      # SMTP_USER: "bildirim@ornek.com"
+      # SMTP_PASS: ""
+      # SMTP_FROM: "Prestij <bildirim@ornek.com>"

@@ -1,0 +1,27 @@
+# /etc/systemd/system/prestij.service  — sunucu çökerse veya yeniden başlarsa otomatik ayağa kalkar
+[Unit]
+Description=Prestij e-ticaret sitesi
+After=network.target
+
+[Service]
+Type=simple
+User=prestij
+WorkingDirectory=/opt/prestij
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOST=127.0.0.1
+Environment=TRUST_PROXY=1
+Environment=BASE_URL=https://www.ornek-alan-adi.com
+# Ödeme ve e-posta anahtarları için config.json yerine bir ortam dosyası kullanın:
+EnvironmentFile=-/etc/prestij.env
+ExecStart=/usr/bin/node --no-warnings server.js
+Restart=always
+RestartSec=3
+# sertleştirme
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/prestij/data
+
+[Install]
+WantedBy=multi-user.target

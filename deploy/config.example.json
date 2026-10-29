@@ -1,0 +1,19 @@
+{
+  "PORT": 3000,
+  "BASE_URL": "https://www.ornek-alan-adi.com",
+  "TRUST_PROXY": "1",
+  "PAYMENT_PROVIDER": "demo",
+  "PAYTR_MERCHANT_ID": "",
+  "PAYTR_KEY": "",
+  "PAYTR_SALT": "",
+  "PAYTR_TEST": "1",
+  "SMTP_HOST": "",
+  "SMTP_PORT": 465,
+  "SMTP_SECURE": "tls",
+  "SMTP_USER": "",
+  "SMTP_PASS": "",
+  "SMTP_FROM": "",
+  "ADMIN_USER": "admin",
+  "LOG_KEEP_DAYS": 60,
+  "BACKUP_KEEP": 14
+}
